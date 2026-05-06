@@ -1,0 +1,321 @@
+/* Filter Container */
+.filterContainer {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filterGroup label {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.filterSelect {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filterSelect:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.filterSelect:focus {
+  outline: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Joke Card */
+.jokeCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.5s ease;
+  margin-bottom: 2rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.jokeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.source {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.favoriteBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+}
+
+.favoriteBtn:hover {
+  transform: scale(1.2);
+}
+
+.favoriteBtn.favorited {
+  animation: heartBeat 0.6s ease;
+}
+
+@keyframes heartBeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.jokeText {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.jokeFooter {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.copyBtn,
+.shareBtn {
+  flex: 1;
+  min-width: 100px;
+  padding: 0.75rem 1rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.copyBtn:hover,
+.shareBtn:hover {
+  background-color: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Share Buttons */
+.shareButtons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.shareLink {
+  padding: 0.7rem;
+  background-color: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.shareLink:hover {
+  background-color: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Favorites List Modal */
+.favoritesModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.favoritesContent {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.favoritesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.favoritesHeader h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.closeBtn:hover {
+  color: #333;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #999;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+.favoritesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.favoriteItem {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.favoriteItem:hover {
+  background-color: #f0f0f0;
+  transform: translateX(5px);
+}
+
+.favoriteItem p {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.removeFavBtn {
+  padding: 0.5rem 1rem;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.removeFavBtn:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filterContainer {
+    flex-direction: column;
+  }
+
+  .filterGroup {
+    min-width: 100%;
+  }
+
+  .jokeCard {
+    padding: 1.5rem;
+  }
+
+  .jokeText {
+    font-size: 1.1rem;
+  }
+
+  .shareButtons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .favoritesContent {
+    width: 95%;
+  }
+}
